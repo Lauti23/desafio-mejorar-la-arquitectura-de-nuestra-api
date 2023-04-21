@@ -10,8 +10,10 @@ loginRoute
 
     .post("/", routeLogs, passport.authenticate("login", { 
         successRedirect: "/",
-        failureRedirect: "/login",
+        failureRedirect: "/login/failed",
         passReqToCallback: true }
     ), (req, res) => {
         
     })
+
+    .get("/failed", routeLogs, loginController.loginFailed)

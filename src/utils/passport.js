@@ -34,7 +34,7 @@ export const initializePassport = () => {
             try {
                 const user = await userService.getByUser({username});
                 if(!user) {
-                    logger.warn("El email no existe.")
+                    logger.warn("El usuario no existe.")
                     return done(null, false);
                 } 
                 if(!isValid(user, password)) {
