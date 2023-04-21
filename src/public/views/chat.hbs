@@ -1,0 +1,33 @@
+<header>
+    <nav class="nav">
+        <h1 class="navTitle">Ecommerce</h1> 
+        <ul class="navList">
+            <a href="/products"><li class="listItems">Productos</li></a>
+            <a href="/carts"><li class="listItems">Carrito</li></a>
+            <a href="/profile"><li class="listItems">Perfil</li></a>
+            <a href="/chat"><li class="listItems">Chat</li></a>
+        </ul>
+        <div class="navButtons">
+            <a href="/products/sell"><p>Vender un producto</p></a>
+            <a href="/logout"><p class="logout">Cerrar Sesión</p></a>
+        </div>
+    </nav>
+</header>
+<main>
+    <div id="chat" class="chatContainer">
+        <h3 class="chatTitle">Chat</h3>
+        <hr class="chatHr">
+        <h6 class="chatSubtitle">¡Bienvenido a la sala de chat <span id="username">{{this.user}}</span>!</h6>
+        <div id="chatHistory" class="chatHistory">
+            <p id="noMessagesYet">No hay mensajes aún</p>
+        </div>
+        <form id="chatBox" class="chatForm">
+            <input id="messageBox" name="message" placeholder="Escribe tu mensaje..." type="text">
+            <button id="sendMessageBtn" type="submit">Enviar</button>
+        </form>
+    </div>
+</main>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/chat.js"></script>

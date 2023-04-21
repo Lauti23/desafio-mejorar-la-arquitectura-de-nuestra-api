@@ -1,0 +1,39 @@
+<header>
+    <nav class="nav">
+        <h1 class="navTitle">Ecommerce</h1> 
+        <ul class="navList">
+            <a href="/products"><li class="listItems">Productos</li></a>
+            <a href="/carts"><li class="listItems">Carrito</li></a>
+            <a href="/profile"><li class="listItems">Perfil</li></a>
+        </ul>
+        <div class="navButtons">
+            <a href="/logout"><p class="logout">Cerrar Sesión</p></a>
+        </div>
+    </nav>
+</header>
+<h2 class="title">Publicar un producto a la venta</h2>
+
+<form id="form" class="productsForm" method="post">
+        <label>Nombre del producto:</label>
+        <input name="product">
+        <label>Precio del producto:</label>
+        <input name="price">
+        <label>URL de la imágen del producto:</label>
+        <input name="image">
+        <label>Stock disponible:</label>
+        <input name="stock">
+        <button class="btn" type="submit">Publicar</button>
+        <label id="noData"></label>
+</form>
+<table id="table" class="productsTable">
+        <tr class="productsTableRow">
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+            <th>Stock</th>
+            <th>Eliminar</th>
+        </tr>
+</table>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/products.js"></script>

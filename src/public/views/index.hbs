@@ -1,0 +1,31 @@
+{{#if user}}
+    <header>
+        <nav class="nav">
+            <h1 class="navTitle">Ecommerce</h1> 
+            <ul class="navList">
+                <a href="/products"><li class="listItems">Productos</li></a>
+                <a href="/carts"><li class="listItems">Carrito</li></a>
+                <a href="/profile"><li class="listItems">Perfil</li></a>
+            </ul>
+            <div class="navButtons">
+                <a href="/logout"><p class="logout">Cerrar Sesión</p></a>
+            </div>
+        </nav>
+    </header>
+{{else}}
+    <header>
+        <nav class="nav"> 
+            <h1 class="navTitle">Ecommerce</h1> 
+            <ul class="navList">
+                <li class="listItems">Productos</li>
+            </ul>
+            <div class="navButtons">
+                <ul class="buttonList">
+                    <a href="/login"><li>Iniciar Sesión</li></a>
+                    <a href="/register"><li>Registrarse</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+{{/if}}
+<h2 class="title">Inicio</h2>
