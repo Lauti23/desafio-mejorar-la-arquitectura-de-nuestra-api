@@ -45,7 +45,6 @@ initializePassport();
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 app.engine("hbs", handlebars.engine({ extname: ".hbs", defaultLayout: "main.hbs" }))
 app.set("view engine", "hbs");
 app.set("views", "src/public/views")

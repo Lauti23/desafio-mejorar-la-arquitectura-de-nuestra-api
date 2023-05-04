@@ -9,11 +9,25 @@ export class User {
 
     static get schema() {
         return {
-            name: String,
-            surname: String,
-            email: String,
+            name: {
+                type: String,
+            },
+            surname: {
+                type: String,
+            },
+            email: {
+                type: String,
+                unique: true,
+            },
+            image: String,
             phone: String,
-            username: String,
+            cart: {
+                type: String,
+            },
+            username: {
+                type: String,
+                unique: true,
+            },
             password: String
         }
     }

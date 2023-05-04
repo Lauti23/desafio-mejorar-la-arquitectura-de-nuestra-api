@@ -1,4 +1,12 @@
 export const render = (req, res) => {
-    console.log(req.user)
-    res.render("profile.hbs", { user: req.user.username })
+    const { name, surname, email, phone, username, image } = req.user
+    const user = {
+        name,
+        surname,
+        email,
+        phone,
+        username,
+        image
+    }
+    res.render("profile.hbs", { currentUser: user })
 }

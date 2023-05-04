@@ -9,9 +9,19 @@ export class Cart {
     }
     static get schema() {
         return {
-            owner: String,
-            items: [Product.schema],
-            price: String,
+            owner: {
+                type: String,
+                unique: true,
+                required: true
+            },
+            items: {
+                type: [Product.schema],
+                default: undefined
+            },
+            price: {
+                type: Number,
+                default: 0
+            }
         }
     }
 }

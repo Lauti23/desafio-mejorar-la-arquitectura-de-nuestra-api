@@ -12,7 +12,7 @@
     </nav>
 </header>
 <h2 class="title">Registrate</h2>
-<form class="registerForm" action="/register" method="post">
+<form class="registerForm" action="/register" method="post" enctype="multipart/form-data">
     <div class="formDiv">
         <label for="name">Ingrese su nombre</label>
         <input type="text" name="name" id="name" placeholder="Nombre...">
@@ -28,6 +28,10 @@
     <div class="formDiv">
         <label for="phone">Ingrese su número de teléfono</label>
         <input type="text" name="phone" id="phone" placeholder="Número de teléfono...">
+    </div>
+    <div class="formDiv">
+        <label for="image">Suba una foto de perfil</label>
+        <input type="file" name="image" id="image" placeholder="Foto de perfil...">
     </div>
     <div class="formDiv">
         <label for="username">Ingrese el nombre de usuario que desea</label>

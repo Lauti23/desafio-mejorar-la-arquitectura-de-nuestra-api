@@ -5,12 +5,13 @@ const render = (req, res) => {
 }
 
 const renderSell = (req, res) => {
-    res.render("sell.hbs")
+    res.status(200).render("sell.hbs")
+    
 }
 
 const getById = async (req, res) => {
-    let {id} = req.params
-    const product = await productService.getById(id)
+    let { id } = req.params
+    const product = await productService.getById({ _id: id })
     res.status(200).send(product)
 }
 
@@ -34,7 +35,7 @@ const postProduct = async (req, res) => {
         image: req.body.image,
         stock: req.body.stock
     }
-    productService.save(product)
+    await productService.save(product)
     res.status(201).send(product)
 }
 

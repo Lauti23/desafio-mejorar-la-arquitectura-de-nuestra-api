@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { logger } from "../utils/logger.js";
 import { User } from "../models/User.js";
 import { Product } from "../models/Product.js"
 import { Cart } from "../models/Cart.js";
@@ -9,9 +10,9 @@ export class MongoDAO {
         this.mongoose = mongoose.connect(config.url, {
             useNewUrlParser: true
         })
-            .then(() => console.log("BASE DE DATOS CONECTADA"))
+            .then(() => logger.info("BASE DE DATOS CONECTADA"))
             .catch(err => {
-                console.log(err)
+                logger.error(err.message)
                 process.exit()
             })
         const timestamp = { timestamps: { createdAt: "created_at", updatedAt: "updated_at" }}
@@ -45,7 +46,7 @@ export class MongoDAO {
         try {
             let instance = new this.models[entity](document)
             let result = await instance.save();
-            return result ? result.toObject() : null
+            return result
         } catch (error) {
             console.log("Error en insert DAO", error)
         }

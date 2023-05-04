@@ -2,6 +2,7 @@ import { MongoDAO } from "../DAO's/mongo.dao.js";
 import { UserService } from "./user.service.js";
 import { ProductService } from "./product.service.js";
 import { MessageService } from "./message.service.js";
+import { CartService } from "./cart.service.js";
 import config from "../utils/config.js";
 import { UsersDaoArray } from "../DAO's/array.dao.js";
 
@@ -22,3 +23,4 @@ switch (config.app.persistance) {
 export const userService = new UserService(dao);
 export const productService = new ProductService(dao);
 export const messageService = new MessageService(dao);
+export const cartService = new CartService(dao);
